@@ -59,7 +59,7 @@ class JuegoAdivinanza:
         if intento < self.numero_secreto:
 
             return "El número secreto es mayor"
-
+ ################################################################ Elif hace parte de la cadena de If y else es si ninguna de las opciones anteriores se cumplio
 # Si es mayor, indica que el número es menor.
         elif intento > self.numero_secreto:
 
