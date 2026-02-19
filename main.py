@@ -43,23 +43,29 @@ class Partida:
 
 class JuegoAdivinanza:
 
+# nombre (str): Nombre del juego.
     def __init__(self, nombre: str):
-
         self.nombre = nombre
+# numero_secreto (int): Número aleatorio generado entre 1 y 100 (SE IMPORTA RANDOM).
         self.numero_secreto = random.randint(1, 100)
 
+# verificar_intento(intento: int, jugador: Jugador, partida: Partida):
     def verificar_intento(self, intento: int, jugador: Jugador, partida: Partida):
 
-        partida.registrar_intento(intento)
+        partida.registrar_intento(intento) # Por medio de partida:Partida se importa partida, para poder usar registar_intento para poder con el append que tiene registrar intento agregar el valor
 
+# Compara el intento con el número secreto.
+# Si es menor, indica que el número es mayor.
         if intento < self.numero_secreto:
 
             return "El número secreto es mayor"
 
+# Si es mayor, indica que el número es menor.
         elif intento > self.numero_secreto:
 
             return "El número secreto es menor"
 
+# Si acierta, incrementa el puntaje del jugador y genera un nuevo número secreto.
         else:
 
             jugador.incrementar_puntaje()
